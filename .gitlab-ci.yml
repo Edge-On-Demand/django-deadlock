@@ -12,6 +12,9 @@ cache:
 
 before_script:
   - python -V
+  - sudo add-apt-repository -y ppa:fkrull/deadsnakes
+  - sudo apt-get -yq update
+  - sudo apt-get -yq install python3.4 python3.4-dev python3.6 python3.6-dev
   - pip install -r requirements-test.txt
 
 test:
