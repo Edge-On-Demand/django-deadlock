@@ -1,4 +1,4 @@
-image: python:latest
+image: bionic:latest
 
 services:
   - postgres:latest
