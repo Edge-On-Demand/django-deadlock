@@ -1,10 +1,11 @@
-image: bionic:latest
+# https://hub.docker.com/_/ubuntu
+image: ubuntu:latest
 
 services:
   - postgres:latest
 
-#variables:
-#  POSTGRES_DB: ci
+# variables:
+#   POSTGRES_DB: ci
 
 cache:
   paths:
