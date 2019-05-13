@@ -1,17 +1,12 @@
 # https://hub.docker.com/_/ubuntu
 image: ubuntu:latest
 
-services:
-  - postgres:latest
-
-# variables:
-#   POSTGRES_DB: ci
-
 cache:
   paths:
   - ~/.cache/pip/
 
 before_script:
+  - apt-get -yq install software-properties-common
   - add-apt-repository -y ppa:fkrull/deadsnakes
   - apt-get -yq update
   - apt-get -yq install python2.7 python2.7-dev python3.4 python3.4-dev python3.6 python3.6-dev python3.7 python3.7-dev
@@ -19,7 +14,6 @@ before_script:
   - pip install -r requirements-test.txt
 
 test:
-#  variables:
-#    DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
   - ./test.sh
+

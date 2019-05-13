@@ -28,9 +28,6 @@ socket.gethostname = lambda: 'localhost'
 
 class Tests(TestCase):
 
-    def setUp(self):
-        pass
-
     def test_example(self):
         username = 'admin@localhost.com'
         password = 'password'
@@ -47,6 +44,7 @@ class Tests(TestCase):
         response = c.get('/admin/database_deadlock/')
         self.assertEqual(response.status_code, 200)
 
-    def _test_table(self):
+    def test_table(self):
         # Note, this is only empty for Sqlite3.
-        self.assertEqual(Deadlock.objects.all().count(), 0)
+        self.assertEqual(Deadlock.objects.all().count(), 1)
+
