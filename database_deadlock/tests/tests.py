@@ -47,4 +47,3 @@ class Tests(TestCase):
     def test_table(self):
         # Note, this is only empty for Sqlite3.
         self.assertEqual(Deadlock.objects.all().count(), 1)
-
