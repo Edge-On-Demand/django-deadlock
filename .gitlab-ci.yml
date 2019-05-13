@@ -6,6 +6,7 @@ cache:
   - ~/.cache/pip/
 
 before_script:
+  - apt-get -yq update
   - apt-get -yq install software-properties-common
   - add-apt-repository -y ppa:fkrull/deadsnakes
   - apt-get -yq update
